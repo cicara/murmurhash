@@ -30,6 +30,10 @@
   "directories": {
     "lib": "lib"
   },
+  "keywords": [
+    "hash",
+    "murmurhash"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cicara/murmurhash.git"
