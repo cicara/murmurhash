@@ -10,4 +10,4 @@
  * @param seed Positive integer only
  * @return 32-bit positive integer hash
  */
-export declare function murmurhash2_32_gc(str: string | Uint8Array, seed: number): number;
+export declare function murmurhash2_32_gc(str: string | Uint8Array, seed?: number): number;

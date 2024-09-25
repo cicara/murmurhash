@@ -1,4 +1,4 @@
-function g(n, a) {
+function g(n, a = 0) {
   typeof n == "string" && (n = new TextEncoder().encode(n));
   let i = n.length, t = a ^ i, e = 0, h;
   for (; i >= 4; )

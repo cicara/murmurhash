@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "test": "vitest",
-    "build": "vite build"
+    "build": "vite build",
+    "prepare": "pnpm run build"
   },
   "exports": {
     ".": {
