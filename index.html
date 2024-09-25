@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Murmurhash 32bit Online</title>
+  </head>
+  <body>
+    <h2>Murmurhash 32bit</h2>
+    <p>
+      An optimized javascript implementation of the murmurhash algorithms. Github:
+      <a href="https://github.com/cicara/murmurhash" target="_blank">https://github.com/cicara/murmurhash</a>
+    </p>
+
+    <p>input:</p>
+    <textarea id="value" rows="10" placeholder="type input..." style="width: 100%; box-sizing: border-box"></textarea>
+    <label>
+      <span>seed:</span>
+      <input id="seed" type="number" min="0" step="1" value="0" />
+    </label>
+
+    <p>v2:</p>
+    <textarea
+      id="v2-output"
+      rows="5"
+      readonly
+      placeholder="v2 output..."
+      style="width: 100%; box-sizing: border-box"
+    ></textarea>
+    <p>v3:</p>
+    <textarea
+      id="v3-output"
+      rows="5"
+      readonly
+      placeholder="v3 output..."
+      style="width: 100%; box-sizing: border-box"
+    ></textarea>
+    <script type="module">
+      import { v2, v3 } from "./dist/index.js";
+
+      /**
+       * @type {HTMLInputElement}
+       */
+      const seedInput = document.getElementById("seed");
+      /**
+       * @type {HTMLTextAreaElement}
+       */
+      const valueInput = document.getElementById("value");
+
+      function update() {
+        const seed = Number.parseInt(seedInput.value || 0);
+        const value = valueInput.value;
+        document.getElementById("v2-output").value = v2(value, seed);
+        document.getElementById("v3-output").value = v3(value, seed);
+      }
+
+      seedInput.addEventListener("change", update);
+      valueInput.addEventListener("input", update);
+    </script>
+  </body>
+</html>
