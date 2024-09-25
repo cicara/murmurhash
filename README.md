@@ -6,8 +6,21 @@ These algorithms take a JavaScript string (and a seed), and quickly create a non
 
 More information about these algorithms can be found at:
 
-*	[MurmurHash Homepage](http://sites.google.com/site/murmurhash/)
-*	[Wikipedia Entry on MurmurHash](http://en.wikipedia.org/wiki/MurmurHash) 
+- [MurmurHash Homepage](http://sites.google.com/site/murmurhash/)
+- [Wikipedia Entry on MurmurHash](http://en.wikipedia.org/wiki/MurmurHash)
+
+## Usage
+
+```shell
+npm install @cicara/murmurhash
+# or
+pnpm add @cicara/murmurhash
+```
+
+```ts
+import { v3 as murmurhash } from "@cicara/murmurhash";
+const hash = murmurhash("hello world", 0); // 1586663183
+```
 
 ## License (MIT)
 
